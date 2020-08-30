@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <form>    
+  <form>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
       <ion-input type="text" #email required></ion-input>
-    </ion-item> 
+    </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
@@ -20,24 +20,29 @@
     </ion-item>
 
     <ion-row>
-      <ion-col> 
-      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+      <ion-col>
+        <ion-button
+          type="submit"
+          (click)="logIn(email, password)"
+          expand="block"
+          >Login</ion-button
+        >
       </ion-col>
     </ion-row>
 
     <span class="divider line one-line">or</span>
 
     <ion-row>
-      <ion-col> 
-        <ion-button 
-         type="submit" 
-         color="danger"
-         (click)="authService.GoogleAuth()" 
-         expand="block">
-           Login with Google
+      <ion-col>
+        <ion-button
+          type="submit"
+          color="danger"
+          (click)="authService.GoogleAuth()"
+          expand="block"
+        >
+          Login with Google
         </ion-button>
       </ion-col>
     </ion-row>
-
   </form>
 </ion-content>
