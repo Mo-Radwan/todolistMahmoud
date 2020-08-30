@@ -13,7 +13,7 @@ import { List } from '../shared/list.model';
 })
 export class ListsPage {
   private Subscription: Subscription;
-  list: List[] = [];
+  lists: List[] = [];
 
   constructor(
     private router: Router,
@@ -30,7 +30,7 @@ export class ListsPage {
           this.listService.getAllowedToWriteList(currentUser.email)
         ).subscribe(
           data => {
-            this.list = data[0].concat(data[1], data[2]);
+            this.lists = data[0].concat(data[1], data[2]);
           });
       });
   }
