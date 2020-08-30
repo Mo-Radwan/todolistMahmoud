@@ -7,14 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ShowlistPageRoutingModule } from './showlist-routing.module';
 
 import { ShowlistPage } from './showlist.page';
+import { SharinglistComponent } from '../sharelist/sharinglist.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ShowlistPageRoutingModule
+    ShowlistPageRoutingModule,
+    SharinglistComponent
   ],
-  declarations: [ShowlistPage]
+  declarations: [ShowlistPage],
+  entryComponents:[SharinglistComponent]
 })
 export class ShowlistPageModule {}
