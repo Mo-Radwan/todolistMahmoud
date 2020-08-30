@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./addlist/addlist.module').then( m => m.AddlistPageModule)
   },
   {
-    path: 'editlist',
+    path: 'edit/:listId',
     loadChildren: () => import('./editlist/editlist.module').then( m => m.EditlistPageModule)
   },
   {
@@ -20,8 +20,25 @@ const routes: Routes = [
     loadChildren: () => import('./sharelist/sharelist.module').then( m => m.SharelistPageModule)
   },
   {
-    path: 'showlist',
-    loadChildren: () => import('./showlist/showlist.module').then( m => m.ShowlistPageModule)
+    path: ':listId',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./showlist/showlist.module').then( m => m.ShowlistPageModule),
+      },
+      {
+        path: 'additem',
+        loadChildren: () => import('./items/additem/additem.module').then( m => m.AdditemPageModule)
+      },
+      {
+        path: 'edititem/:itemId',
+        loadChildren: () => import('./items/edititem/edititem.module').then( m => m.EdititemPageModule)
+      },
+      {
+        path: ':itemId',
+        loadChildren: () => import('./items/showitem/showitem.module').then( m => m.ShowitemPageModule)
+      }
+    ]
   },
   {
     path: 'items',
