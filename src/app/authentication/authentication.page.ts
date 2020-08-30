@@ -25,7 +25,10 @@ export class AuthenticationPage implements OnInit {
   }
 
   eLogin() {
-    this.fireauth.signInWithEmailAndPassword(this.email, this.password).then((res) => {
+    console.log('eLogin');
+    this.fireauth.signInWithEmailAndPassword(this.email, this.password).then(
+      (res) => {
+      console.log(res);
       if (res.user.emailVerified !== true) {
         this.sendVerificationMail();
       } else {
@@ -46,6 +49,7 @@ export class AuthenticationPage implements OnInit {
 
 
   sendVerificationMail() {
+    console.log('sendVerificationMail');
     return this.fireauth.currentUser.then(
       currentUser => {
         currentUser.sendEmailVerification();
@@ -53,6 +57,7 @@ export class AuthenticationPage implements OnInit {
   }
 
   savingUser(usertoSave: User) {
+    console.log('savingUser');
     return this.userService.getUser(usertoSave.uid).then(fetchedUSer => {
       if (!fetchedUSer) {
         this.userService.addUser(usertoSave);

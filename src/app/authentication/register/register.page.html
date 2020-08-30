@@ -8,25 +8,25 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form (ngSubmit)="addUserForm.form.valid && addUser()" #addUserForm="ngForm">
     <ion-item lines="full">
       <ion-label position="floating">Name</ion-label>
-      <ion-input type="text" #name required></ion-input>
+      <ion-input type="text" name="fullName" [(ngModel)]="user.fullName" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" #email required></ion-input>
+      <ion-input type="text" name="email" [(ngModel)]="user.email" email></ion-input>
     </ion-item> 
 
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" #password required></ion-input>
+      <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col> 
-      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Register</ion-button>
+      <ion-button type="submit" expand="block">Register</ion-button>
       </ion-col>
     </ion-row>
   </form>
