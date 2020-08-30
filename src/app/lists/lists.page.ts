@@ -44,5 +44,5 @@ export class ListsPage {
       this.Subscription.unsubscribe();
     }
   }
-  
+
 }

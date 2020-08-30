@@ -27,11 +27,10 @@
         <ion-button type="submit" expand="block">Login</ion-button>
       </ion-col>
     </ion-row>
-
     <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block">
-          Login with Google
+      <ion-col> 
+        <ion-button type="submit" color="danger" (click)="authService.GoogleAuth()" expand="block">
+           Login with Google
         </ion-button>
       </ion-col>
     </ion-row>

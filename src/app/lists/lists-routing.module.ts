@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./editlist/editlist.module').then( m => m.EditlistPageModule)
   },
   {
-    path: 'sharelist',
-    loadChildren: () => import('./sharelist/sharelist.module').then( m => m.SharelistPageModule)
-  },
-  {
     path: ':listId',
     children: [
       {

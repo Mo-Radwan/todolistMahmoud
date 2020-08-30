@@ -36,7 +36,7 @@ export class EditlistPage implements OnInit {
     });
   }
 
-  editTodo() {
+  editList() {
     this.listService.updateList(this.list).then(
       () => {
         this.router.navigate(['lists', this.list.id]);
