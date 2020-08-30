@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { List } from 'src/app/shared/list.model';
 
 @Component({
   selector: 'app-addlist',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addlist.page.scss'],
 })
 export class AddlistPage implements OnInit {
+
+  list: List = {
+    title: "",
+    body: "",
+    owner: "",
+    Readers: [],
+    Writers: []
+  }
 
   constructor() { }
 

@@ -19,6 +19,15 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [ 
+              "firebase/app",
+              "@firebase/app", 
+              "@firebase/firestore",
+              "@firebase/database", 
+              "@firebase/util", 
+              "@firebase/component", 
+              "@firebase/auth"
+            ],
             "assets": [
               {
                 "glob": "**/*",

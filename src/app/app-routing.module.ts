@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: 'lists',
     loadChildren: () => import('./lists/lists.module').then(m => m.ListsPageModule),
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'authentication',
@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: 'lists'},
 ];

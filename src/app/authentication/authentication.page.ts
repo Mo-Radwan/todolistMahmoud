@@ -68,4 +68,8 @@ export class AuthenticationPage implements OnInit {
       });
   }
 
+  register(){
+    this.router.navigateByUrl("/register");
+  }
+
 }

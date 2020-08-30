@@ -5,5 +5,22 @@
 </ion-header>
 
 <ion-content>
+  <form (ngSubmit)="addListForm.form.valid && addList()" #addListForm="ngForm">
 
+    <ion-item lines="none">
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text" name="title" [(ngModel)]="list.title" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Description</ion-label>
+      <ion-input type="text" name="body" [(ngModel)]="list.body" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" expand="block">Save list</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
