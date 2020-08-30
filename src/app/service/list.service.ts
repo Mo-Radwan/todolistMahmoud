@@ -16,7 +16,7 @@ export class ListService {
 
   constructor(private afs: AngularFirestore) {
 
-    this.ListCollection = afs.collection<List>('List');
+    this.ListCollection = afs.collection<List>('list');
 
     this.List$ = this.ListCollection.snapshotChanges().pipe(
       map(actions => {
@@ -86,15 +86,15 @@ export class ListService {
   }
 
   getAllowedToReadList(userEmail: string) {
-    return this.afs.collection<List>('List', ref => ref.where('Readers', 'array-contains', userEmail)).valueChanges({ idField: 'id' });
+    return this.afs.collection<List>('list', ref => ref.where('Readers', 'array-contains', userEmail)).valueChanges({ idField: 'id' });
   }
 
   getAllowedToWriteList(userEmail: string) {
-    return this.afs.collection<List>('List', ref => ref.where('Writers', 'array-contains', userEmail)).valueChanges({ idField: 'id' });
+    return this.afs.collection<List>('list', ref => ref.where('Writers', 'array-contains', userEmail)).valueChanges({ idField: 'id' });
   }
 
   getOwnerList(userEmail: string) {
-    return this.afs.collection<List>('List', ref => ref.where('owner', '==', userEmail)).valueChanges({ idField: 'id' });
+    return this.afs.collection<List>('list', ref => ref.where('owner', '==', userEmail)).valueChanges({ idField: 'id' });
   }
 
   addItem(ListId: string, item: Item) {

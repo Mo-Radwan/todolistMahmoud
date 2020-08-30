@@ -33,8 +33,10 @@ export class AddlistPage implements OnInit {
   }
 
   addList() {
+    console.log('addList');
     this.listService.addList(this.list).then(
       () => {
+        console.log('Done adding..');
         this.router.navigate(['lists']);
       });
   }
