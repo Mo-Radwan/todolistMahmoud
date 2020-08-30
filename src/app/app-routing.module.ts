@@ -7,18 +7,26 @@ const routes: Routes = [
   {
     path: 'lists',
     loadChildren: () => import('./lists/lists.module').then(m => m.ListsPageModule),
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
   {
     path: 'authentication',
     loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationPageModule)
   },
   {
+    path: 'register',
+    loadChildren: () => import('./authentication/register/register.module').then( m => m.RegisterPageModule),
+  },
+  {
+    path: 'recovery',
+    loadChildren: () => import('./authentication/recovery/recovery.module').then( m => m.RecoveryPageModule),
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
-  { path: '**', redirectTo: 'home'},
+  { path: '**', redirectTo: 'lists'},
 ];
 
 @NgModule({
